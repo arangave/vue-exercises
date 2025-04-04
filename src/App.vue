@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import TheTitle from './components/TheTitle.vue';
+
 </script>
 
 <template>
@@ -9,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <h1>Vue Exercises</h1>
       <nav>
+        <TheTitle />
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
