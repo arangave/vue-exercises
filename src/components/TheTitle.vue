@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { defineProps } from 'vue'
+
+defineProps<{ propTitle: string }>()
 </script>
 
 <template>
-  <h2 class="title">Titulo estatico</h2>
+  <h2 class="title">{{ propTitle }}</h2>
 </template>
 
 <style scoped>
@@ -16,4 +19,3 @@
   padding-bottom: 0.5rem;
 }
 </style>
-

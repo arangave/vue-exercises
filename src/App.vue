@@ -10,7 +10,7 @@ import TheTitle from './components/TheTitle.vue'
     <div class="wrapper">
       <h1>Vue-Exercises</h1>
       <nav>
-        <TheTitle />
+        <TheTitle propTitle="Título dinámico desde App" />
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
