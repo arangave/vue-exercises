@@ -2,6 +2,7 @@
 :root {
   --color-text: #3498db;
   --color-border: #ccc;
+  --color-hover: #2ecc71;
 }
 
 
@@ -11,9 +12,21 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
   color: var(--color-text);
   line-height: 1.5;
+}
+
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-hover);
 }
