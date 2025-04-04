@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import TheTitle from './components/TheTitle.vue';
-
+import TheTitle from './components/TheTitle.vue'
 </script>
 
 <template>
@@ -9,7 +8,7 @@ import TheTitle from './components/TheTitle.vue';
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <h1>Vue Exercises</h1>
+      <h1>Vue-Exercises</h1>
       <nav>
         <TheTitle />
         <RouterLink to="/">Home</RouterLink>
@@ -29,11 +28,21 @@ header {
   max-height: 100vh;
   text-align: center;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
   display: block;
   margin: 0 auto 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav {
@@ -58,16 +67,24 @@ nav a.router-link-exact-active {
 @media (min-width: 1024px) {
   header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
   .logo {
-    margin-right: 1rem;
+    margin: 0 auto 1rem;
+    align-self: center;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   nav {
-    margin-left: 1rem;
+    margin-left: 0;
   }
 }
 </style>
