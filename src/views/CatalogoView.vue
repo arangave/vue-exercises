@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { products } from '../data/mock';
-import ProductCard from '../components/ProductCard.vue';
-import { useRouter } from 'vue-router';
+import { products } from '../data/mock'
+import ProductCard from '../components/ProductCard.vue'
+import { useRouter } from 'vue-router'
 
-const router = useRouter();
+const router = useRouter()
 
 const goToHome = () => {
-  router.push('/');
-};
+  router.push('/')
+}
 </script>
 
 <template>

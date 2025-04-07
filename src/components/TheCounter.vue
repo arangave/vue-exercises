@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, defineProps, watch, ref } from 'vue'
-import { useCounter } from '../composables/useCounter'
+import { useCounterStore } from '../stores/counter'
 
 const props = defineProps({
   showDouble: {
@@ -9,15 +9,15 @@ const props = defineProps({
   },
 })
 
-const { counter, increment, decrement } = useCounter()
+const counterStore = useCounterStore()
 
-const counterDouble = computed(() => counter.value * 2)
+const counterDouble = computed(() => counterStore.count * 2)
 const counterMessage = ref('')
 
 const updateMessage = () => {
-  if (counter.value === 0) {
+  if (counterStore.count === 0) {
     counterMessage.value = 'Estás en el valor mínimo'
-  } else if (counter.value === 10) {
+  } else if (counterStore.count === 10) {
     counterMessage.value = 'Estás en el valor máximo'
   } else {
     counterMessage.value = 'Estás en los parámetros adecuados'
@@ -26,24 +26,24 @@ const updateMessage = () => {
 
 updateMessage()
 
-watch(counter, () => {
+watch(() => counterStore.count, () => {
   updateMessage()
 })
 
 const counterClass = computed(() => ({
   'counter-value': true,
-  'counter-max': counter.value === 10,
+  'counter-max': counterStore.count === 10,
 }))
 </script>
 
 <template>
   <div class="counter">
     <h3>{{ counterMessage }}</h3>
-    <p :class="counterClass">Cantidad: {{ counter }}</p>
+    <p :class="counterClass">Cantidad: {{ counterStore.count }}</p>
     <p v-if="props.showDouble" class="counter-double">Doble: {{ counterDouble }}</p>
     <div class="button-group">
-      <button v-if="counter < 10" @click="increment" class="custom-button">+</button>
-      <button v-if="counter > 0" @click="decrement" class="custom-button">-</button>
+      <button v-if="counterStore.count < 10" @click="counterStore.increment" class="custom-button">+</button>
+      <button v-if="counterStore.count > 0" @click="counterStore.decrement" class="custom-button">-</button>
     </div>
   </div>
 </template>
