@@ -18,8 +18,9 @@ const decrement=()=>{
     <TheTitle>Contador</TheTitle>
     <p class="counter-value">Valor: {{ counter }}</p>
     <div class="button-group">
-      <button v-if="counter > 0" @click="decrement" class="custom-button">Decrement</button>
       <button v-if="counter < 10" @click="increment" class="custom-button">Increment</button>
+      <button v-if="counter > 0" @click="decrement" class="custom-button">Decrement</button>
+
     </div>
   </div>
 </template>
