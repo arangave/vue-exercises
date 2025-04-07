@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
-import TheCounter from './TheCounter.vue';
+import { defineProps } from 'vue'
+import TheCounter from './TheCounter.vue'
 
 const props = defineProps<{
-  image: string;
-  title: string;
-  description: string;
-  price: number;
-}>();
+  image: string
+  title: string
+  description: string
+  price: number
+}>()
 
 const addToCart = () => {
-  alert(`Añadido a la cesta: ${props.title}`);
-};
+  alert(`Añadido a la cesta: ${props.title}`)
+}
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const addToCart = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
+  background-color: #000000;
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.5rem;
   padding: 1rem;
