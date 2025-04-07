@@ -2,6 +2,8 @@
 import { defineProps } from 'vue'
 
 defineProps<{ propTitle: string }>()
+
+
 </script>
 
 <template>
