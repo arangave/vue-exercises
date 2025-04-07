@@ -1,0 +1,61 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import TheTitle from './TheTitle.vue'
+
+const counter = ref(0);
+
+const increment = () => counter.value++;
+const decrement = () => counter.value--;
+</script>
+
+<template>
+  <div class="counter">
+    <TheTitle>Contador</TheTitle>
+    <p class="counter-value">Valor: {{ counter }}</p>
+    <div class="button-group">
+      <button @click="decrement">Decrement</button>
+      <button @click="increment">Increment</button>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  padding: 1em;
+  border: 0.125em solid var(--color-border);
+  border-radius: 0.5em;
+  background-color: #fff;
+}
+
+.counter-value {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 1em;
+}
+
+button {
+  padding: 0.5em 1em;
+  border: none;
+  background-color: var(--color-text);
+  color: #fff;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-hover);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+</style>
