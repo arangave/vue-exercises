@@ -2,10 +2,10 @@
 import { ref } from 'vue'
 import TheTitle from './TheTitle.vue'
 
-const counter = ref(0);
+const counter = ref(0)
 
-const increment = () => counter.value++;
-const decrement = () => counter.value--;
+const increment = () => counter.value++
+const decrement = () => counter.value--
 </script>
 
 <template>
@@ -57,5 +57,26 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+}
+@media (max-width: 600px) {
+  .counter {
+    padding: 0.75em;
+    font-size: 0.9em;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .custom-button {
+    width: 100%;
+    padding: 0.75em;
+    font-size: 1em;
+  }
+
+  .counter-value {
+    font-size: 1.2em;
+  }
 }
 </style>
