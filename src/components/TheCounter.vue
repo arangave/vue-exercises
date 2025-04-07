@@ -1,15 +1,22 @@
 <script setup lang="ts">
-import { useCounter } from '../composables/useCounter.ts';
+import { computed } from 'vue';
+import { useCounter } from '../composables/useCounter';
 
 const { counter, increment, decrement } = useCounter();
+
+const counterClass = computed(() => ({
+  'counter-value': true,
+  'counter-max': counter.value === 10,
+}));
 </script>
 
 <template>
   <div class="counter">
-    <p class="counter-value">Cantidad: {{ counter }}</p>
+    <p :class="counterClass">Cantidad: {{ counter }}</p>
     <div class="button-group">
-      <button v-if="counter < 10" @click="increment" class="custom-button">+</button>
       <button v-if="counter > 0" @click="decrement" class="custom-button">-</button>
+      <button v-if="counter < 10" @click="increment" class="custom-button">+</button>
+
     </div>
   </div>
 </template>
@@ -26,6 +33,11 @@ const { counter, increment, decrement } = useCounter();
 .counter-value {
   font-size: 1.2rem;
   margin: 0.5rem 0;
+}
+
+.counter-max {
+  color: green;
+  font-weight: bold;
 }
 
 .button-group {
