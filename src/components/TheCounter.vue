@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineProps } from 'vue'
+import { computed, defineProps, watch, ref } from 'vue'
 import { useCounter } from '../composables/useCounter'
 
 const props = defineProps({
@@ -12,6 +12,23 @@ const props = defineProps({
 const { counter, increment, decrement } = useCounter()
 
 const counterDouble = computed(() => counter.value * 2)
+const counterMessage = ref('')
+
+const updateMessage = () => {
+  if (counter.value === 0) {
+    counterMessage.value = 'Estás en el valor mínimo'
+  } else if (counter.value === 10) {
+    counterMessage.value = 'Estás en el valor máximo'
+  } else {
+    counterMessage.value = 'Estás en los parámetros adecuados'
+  }
+}
+
+updateMessage()
+
+watch(counter, () => {
+  updateMessage()
+})
 
 const counterClass = computed(() => ({
   'counter-value': true,
@@ -21,8 +38,8 @@ const counterClass = computed(() => ({
 
 <template>
   <div class="counter">
+    <h3>{{ counterMessage }}</h3>
     <p :class="counterClass">Cantidad: {{ counter }}</p>
-
     <p v-if="props.showDouble" class="counter-double">Doble: {{ counterDouble }}</p>
     <div class="button-group">
       <button v-if="counter < 10" @click="increment" class="custom-button">+</button>
@@ -40,20 +57,25 @@ const counterClass = computed(() => ({
   margin: 0.5rem 0;
 }
 
+h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  color: var(--color-hover);
+}
+
 .counter-value {
   font-size: 1.2rem;
   margin: 0.5rem 0;
 }
 
+.counter-double {
+  font-size: 1rem;
+  color: var(--color-hover);
+}
+
 .counter-max {
   color: green;
   font-weight: bold;
-}
-
-.double-value {
-  font-size: 1.2rem;
-  color: var(--color-hover);
-  margin: 0.2rem 0;
 }
 
 .button-group {
