@@ -21,11 +21,13 @@ const addToCart = () => {
       <h3 class="product-title">{{ title }}</h3>
       <p class="product-description">{{ description }}</p>
       <p class="product-price">€{{ price.toFixed(2) }}</p>
-      <TheCounter />
+      
+      <TheCounter :showDouble="false" />
       <button @click="addToCart" class="add-button">Añadir a la cesta</button>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .product-card {

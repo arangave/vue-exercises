@@ -19,7 +19,7 @@ import ParentComponent from './components/ParentComponent.vue';
   </header>
 
   <main>
-    <TheCounter />
+    <TheCounter :showDouble="true" />
     <ParentComponent />
     <RouterView />
   </main>
