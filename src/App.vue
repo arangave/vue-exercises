@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import TheTitle from './components/TheTitle.vue';
-import TheCounter from './components/TheCounter.vue';
-import ParentComponent from './components/ParentComponent.vue';
+import { RouterLink, RouterView } from 'vue-router'
+import TheTitle from './components/TheTitle.vue'
+import TheCounter from './components/TheCounter.vue'
+import ParentComponent from './components/ParentComponent.vue'
 </script>
 
 <template>
@@ -27,7 +27,7 @@ import ParentComponent from './components/ParentComponent.vue';
 </template>
 
 <style>
-/* Menú superior */
+
 header {
   width: 100%;
   background-color: #f4f4f4;
@@ -65,7 +65,9 @@ nav a {
   color: var(--color-text);
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 nav a:hover {
