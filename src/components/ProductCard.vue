@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import TheCounter from './TheCounter.vue'
+import { defineProps } from 'vue';
 
 const props = defineProps<{
-  image: string
-  title: string
-  description: string
-  price: number
-}>()
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+}>();
 
 const addToCart = () => {
-  alert(`Añadido a la cesta: ${props.title}`)
-}
+  alert(`Añadido a la cesta: ${props.title}`);
+};
 </script>
 
 <template>
@@ -21,20 +21,17 @@ const addToCart = () => {
       <h3 class="product-title">{{ title }}</h3>
       <p class="product-description">{{ description }}</p>
       <p class="product-price">€{{ price.toFixed(2) }}</p>
-      
-      <TheCounter :showDouble="false" />
       <button @click="addToCart" class="add-button">Añadir a la cesta</button>
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000000;
+  background-color: #000;
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.5rem;
   padding: 1rem;
