@@ -31,7 +31,7 @@ const addToCart = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000;
+  background-color: #fcfcfc;
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.5rem;
   padding: 1rem;
@@ -64,7 +64,7 @@ const addToCart = () => {
 
 .product-description {
   font-size: 0.9rem;
-  color: #555;
+  color: #414141;
   margin: 0.5rem 0;
 }
 

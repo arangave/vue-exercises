@@ -7,11 +7,11 @@ import ParentComponent from './components/ParentComponent.vue';
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="7.8125rem" height="7.8125rem" />
-    <div class="wrapper">
-      <h1>Vue-Exercises</h1>
+    <div class="menu">
+      <div class="logo-container">
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" />
+      </div>
       <nav>
-        <TheTitle>Título</TheTitle>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/Catalogo">Catalogo</RouterLink>
       </nav>
@@ -19,6 +19,7 @@ import ParentComponent from './components/ParentComponent.vue';
   </header>
 
   <main>
+    <TheTitle>Titulo</TheTitle>
     <TheCounter :showDouble="true" />
     <ParentComponent />
     <RouterView />
@@ -26,93 +27,78 @@ import ParentComponent from './components/ParentComponent.vue';
 </template>
 
 <style>
+/* Menú superior */
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-  text-align: center;
-  padding: 1rem;
+  width: 100%;
+  background-color: #f4f4f4;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.menu {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding: 0.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 1rem;
-  max-width: 10rem;
-  width: 100%;
+  width: 3rem;
   height: auto;
-  opacity: 0.9;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.logo:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-@media (max-width: 600px) {
-  .logo {
-    max-width: 7rem;
-  }
-}
-
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 nav {
-  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 nav a {
-  padding: 0.5rem 1rem;
   text-decoration: none;
   color: var(--color-text);
-  border-left: 0.0625rem solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav a:first-of-type {
-  border-left: none;
+nav a:hover {
+  background-color: #fffafa;
+  color: #24a647;
 }
 
 nav a.router-link-exact-active {
   font-weight: bold;
+  color: var(--color-hover);
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-@media (min-width: 64rem) {
-  header {
-    display: flex;
+@media (max-width: 600px) {
+  .menu {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-  }
-
-  .logo {
-    margin: 0 auto 1rem;
-    align-self: center;
-  }
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 1rem;
   }
 
   nav {
-    margin-left: 0;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
+
+  .logo {
+    width: 2.5rem;
+  }
+}
+
+/* Título centrado */
+main {
+  text-align: center;
+  padding: 1rem;
 }
 </style>

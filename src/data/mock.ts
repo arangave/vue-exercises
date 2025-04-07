@@ -17,7 +17,7 @@ export const products: Product[] = [
   },
   {
     id: 3,
-    image: 'https://example.com/image3.jpg',
+    image: 'https://tommycolombia.vteximg.com.br/arquivos/ids/1129543-523-697/mw0mw10839-ybr-1-v-637485763022500000-category-product-version-image.jpg?v=638726498318200000',
     title: 'Camiseta blanca básica',
     description: 'Camiseta blanca de algodón',
     price: 12.99,
