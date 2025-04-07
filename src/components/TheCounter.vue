@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { useCounter } from '../composables/useCounter.ts';
 
-const counter = ref(0);
-
-const increment = () => {
-  if (counter.value < 10) counter.value++;
-};
-
-const decrement = () => {
-  if (counter.value > 0) counter.value--;
-};
+const { counter, increment, decrement } = useCounter();
 </script>
 
 <template>
