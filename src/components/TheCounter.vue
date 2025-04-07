@@ -3,9 +3,14 @@ import { ref } from 'vue'
 import TheTitle from './TheTitle.vue'
 
 const counter = ref(0)
+const increment =() =>{
+  if (counter.value<10)counter.value++;
+}
 
-const increment = () => counter.value++
-const decrement = () => counter.value--
+const decrement=()=>{
+  if (counter.value>0)counter.value--;
+}
+
 </script>
 
 <template>
@@ -13,8 +18,8 @@ const decrement = () => counter.value--
     <TheTitle>Contador</TheTitle>
     <p class="counter-value">Valor: {{ counter }}</p>
     <div class="button-group">
-      <button @click="decrement">Decrement</button>
-      <button @click="increment">Increment</button>
+      <button v-if="counter > 0" @click="decrement" class="custom-button">Decrement</button>
+      <button v-if="counter < 10" @click="increment" class="custom-button">Increment</button>
     </div>
   </div>
 </template>
