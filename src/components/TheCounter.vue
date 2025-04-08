@@ -26,9 +26,12 @@ const updateMessage = () => {
 
 updateMessage()
 
-watch(() => counterStore.count, () => {
-  updateMessage()
-})
+watch(
+  () => counterStore.count,
+  () => {
+    updateMessage()
+  },
+)
 
 const counterClass = computed(() => ({
   'counter-value': true,
@@ -42,8 +45,12 @@ const counterClass = computed(() => ({
     <p :class="counterClass">Cantidad: {{ counterStore.count }}</p>
     <p v-if="props.showDouble" class="counter-double">Doble: {{ counterDouble }}</p>
     <div class="button-group">
-      <button v-if="counterStore.count < 10" @click="counterStore.increment" class="custom-button">+</button>
-      <button v-if="counterStore.count > 0" @click="counterStore.decrement" class="custom-button">-</button>
+      <button v-if="counterStore.count < 10" @click="counterStore.increment" class="custom-button">
+        +
+      </button>
+      <button v-if="counterStore.count > 0" @click="counterStore.decrement" class="custom-button">
+        -
+      </button>
     </div>
   </div>
 </template>

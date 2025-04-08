@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import TheTitle from './components/TheTitle.vue'
 import TheCounter from './components/TheCounter.vue'
 import ParentComponent from './components/ParentComponent.vue'
+import IconMenu from './components/IconMenu.vue'
 </script>
 
 <template>
@@ -12,8 +13,10 @@ import ParentComponent from './components/ParentComponent.vue'
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" />
       </div>
       <nav>
+        <IconMenu />
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/Catalogo">Catalogo</RouterLink>
+
       </nav>
     </div>
   </header>
@@ -27,7 +30,6 @@ import ParentComponent from './components/ParentComponent.vue'
 </template>
 
 <style>
-
 header {
   width: 100%;
   background-color: #f4f4f4;
