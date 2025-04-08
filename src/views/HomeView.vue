@@ -1,13 +1,12 @@
 <script setup lang="ts">
+import TheTitle from '../components/TheTitle.vue'
+import { useRouter } from 'vue-router'
 
-import TheTitle from '../components/TheTitle.vue';
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
+const router = useRouter()
 
 const goToCatalogo = () => {
-  router.push('/catalogo');
-};
+  router.push('/catalogo')
+}
 </script>
 
 <template>
@@ -33,4 +32,4 @@ button {
   border-radius: 0.25em;
   cursor: pointer;
 }
-</style>
+</style>]
