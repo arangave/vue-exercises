@@ -16,11 +16,11 @@ const counterMessage = ref('')
 
 const updateMessage = () => {
   if (counterStore.count === 0) {
-    counterMessage.value = 'Estás en el valor mínimo'
+    counterMessage.value = 'Estás en el mínimo'
   } else if (counterStore.count === 10) {
-    counterMessage.value = 'Estás en el valor máximo'
+    counterMessage.value = 'Estás en el máximo'
   } else {
-    counterMessage.value = 'Estás en los parámetros adecuados'
+    counterMessage.value = 'Estás dentro del rango'
   }
 }
 
