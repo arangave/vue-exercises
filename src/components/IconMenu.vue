@@ -14,7 +14,7 @@ const socialIcons = ref([
       :key="icon.name"
       :href="icon.link"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="redes"
       class="social-icon"
     >
       <i :class="icon.iconClass"></i>
